@@ -53,7 +53,6 @@ class PageController extends Controller
 	public function actionUserPage($id)
 	{
 		$user = User::model()->findByPk($id);
-		
 		$criteria = new CDbCriteria;
 		$criteria->condition = 'user_id="'.$id.'"';
 		$criteria->order = 'title ASC';

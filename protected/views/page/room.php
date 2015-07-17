@@ -2,7 +2,7 @@
 	if(Yii::app()->user->hasFlash('registration')) echo "<h3>Вы зарегистрировались!</h3>"; 
 	if (!Yii::app()->user->isGuest) {
 		printf("<h3>Личный кабинет пользователя %s.</h3>", Yii::app()->user->name); 
-		printf("<h3>Баланс: %s$</h3>", UserCount::getSymbols(UserCount::publishedText(Yii::app()->user->id))*0.1); 
+		printf("<h3>Баланс: %s$</h3>", UserCount::getBalance(Yii::app()->user->id)); 
 	}
 	else {
 		echo "<h3>Что бы войти в личный кабинет авторизируйтесь!</h3>";

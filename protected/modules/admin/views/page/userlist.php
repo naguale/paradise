@@ -31,12 +31,12 @@
 			),
 			'symbols'=>array(
 				'name'=>'Количество символов',
-				'value'=>'UserCount::getSymbols(UserCount::allText($data->id))',
+				'value'=>'UserCount::getAllSymbols($data->id)',
 				'htmlOptions'=>array('style'=>'text-align: center;'),				
 			),
 			'price'=>array(
 				'name'=>'Баланс',
-				'value'=>'UserCount::getSymbols(UserCount::publishedText($data->id))*0.1."$"',
+				'value'=>'UserCount::getBalance($data->id)."$"',
 				'htmlOptions'=>array('style'=>'text-align: center;'),				
 			),
 		),

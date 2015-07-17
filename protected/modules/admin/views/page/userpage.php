@@ -27,7 +27,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 			'text',
 			'symbols'=>array(
 				'name'=>'Количество символов',
-				'value'=>'CHtml::encode(UserCount::getSymbols($data->text))',
+				'value'=>'CHtml::encode(UserCount::getSymbols($data->id))',
 				'htmlOptions'=>array('style'=>'text-align: center;'),				
 			),
 			'publish'=>array(
@@ -43,7 +43,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 			),
 			'coins'=>array(
 				'name'=>'Вознаграждение',
-				'value'=>'($data->publish==1) ? UserCount::getSymbols($data->text)*0.1."$" : "0$"',
+				'value'=>'UserCount::getReward($data->id)."$"',
 				'htmlOptions'=>array('style'=>'text-align: center;'),			
 			),
 		),

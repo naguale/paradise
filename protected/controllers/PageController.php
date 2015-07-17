@@ -1,5 +1,4 @@
 <?php
-
 class PageController extends Controller
 {
 	public function filters()
@@ -27,11 +26,6 @@ class PageController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}
-	
-	public function textCount($text)
-	{
-		return strip_tags(mb_strlen($text, 'utf-8'));
 	}
 
 	public function actionIndex()
@@ -85,7 +79,7 @@ class PageController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('userpage'));
 	}
-
+	
 	public function actionUserpage()
 	{
 		$criteria = new CDbCriteria;
