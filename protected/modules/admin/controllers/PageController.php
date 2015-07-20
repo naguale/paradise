@@ -54,8 +54,10 @@ class PageController extends Controller
 	{
 		$user = User::model()->findByPk($id);
 		$criteria = new CDbCriteria;
-		$criteria->condition = 'user_id="'.$id.'"';
+		$criteria->condition = 'user_id=:id';
+		$criteria->params = array(':id'=>$id);
 		$criteria->order = 'title ASC';
+		
 		$dataProvider=new CActiveDataProvider('Page', array(
 			'criteria'=>$criteria,
 		));
